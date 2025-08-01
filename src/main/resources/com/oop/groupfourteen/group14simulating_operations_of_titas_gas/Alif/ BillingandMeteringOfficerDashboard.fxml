@@ -6,9 +6,105 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif.BillingandMeteringOfficerDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif.BillingandMeteringOfficerDashboardController">
+<children>
+    <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+        <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="TITAS Gas - Billing and Metering Officer Dashboard" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logoutBtn" mnemonicParsing="false" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+        </children>
+    </HBox>
+    <HBox spacing="20.0">
+        <children>
+            <VBox spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 20;" minWidth="250.0">
+                <children>
+                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Menu Options" />
+                    <Separator />
+                    <Button fx:id="recordMeterBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Record Meter Readings" />
+                    <Button fx:id="generateBillsBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Generate Monthly Bills" />
+                    <Button fx:id="handleErrorsBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Handle Billing Errors" />
+                    <Button fx:id="updateMeterBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Update Meter Records" />
+                    <Button fx:id="paymentSummaryBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Generate Payment Summary" />
+                    <Button fx:id="processRefundsBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Process Refunds" />
+                    <Button fx:id="discountAdjustBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Approve Discount Adjustments" />
+                    <Button fx:id="finalBillBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Issue Final Bill" />
+                </children>
+            </VBox>
+            <VBox spacing="15.0" HBox.hgrow="ALWAYS" style="-fx-padding: 20;">
+                <children>
+                    <Label fx:id="workAreaTitle" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Select an option from the menu" />
+                    <Separator />
+                    <VBox fx:id="meterReadingPanel" spacing="10.0" visible="false">
+                        <children>
+                            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                <children>
+                                    <Label text="Customer ID:" minWidth="120.0" />
+                                    <TextField fx:id="customerIdField" promptText="Enter customer ID" />
+                                    <Button fx:id="searchCustomerBtn" text="Search" />
+                                </children>
+                            </HBox>
+                            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                <children>
+                                    <Label text="Meter Reading:" minWidth="120.0" />
+                                    <TextField fx:id="meterReadingField" promptText="Enter meter reading" />
+                                </children>
+                            </HBox>
+                            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                <children>
+                                    <Label text="Reading Date:" minWidth="120.0" />
+                                    <DatePicker fx:id="readingDatePicker" />
+                                </children>
+                            </HBox>
+                            <Button fx:id="submitReadingBtn" text="Submit Reading" style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+                        </children>
+                    </VBox>
+                    <VBox fx:id="generateBillsPanel" spacing="10.0" visible="false">
+                        <children>
+                            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                <children>
+                                    <Label text="Billing Cycle:" minWidth="120.0" />
+                                    <ComboBox fx:id="billingCycleCombo" promptText="Select billing cycle" />
+                                </children>
+                            </HBox>
+                            <Button fx:id="calculateBillsBtn" text="Calculate Bills" style="-fx-background-color: #f39c12; -fx-text-fill: white;" />
+                            <TextArea fx:id="billPreviewArea" prefRowCount="8" promptText="Bill preview will appear here..." editable="false" />
+                            <Button fx:id="confirmGenerationBtn" text="Confirm Generation" style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+                        </children>
+                    </VBox>
+                    <VBox fx:id="billingErrorsPanel" spacing="10.0" visible="false">
+                        <children>
+                            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                <children>
+                                    <Label text="Account Search:" minWidth="120.0" />
+                                    <TextField fx:id="accountSearchField" promptText="Enter account number" />
+                                    <Button fx:id="searchAccountBtn" text="Search" />
+                                </children>
+                            </HBox>
+                            <TextArea fx:id="complaintDetailsArea" prefRowCount="4" promptText="Complaint details will appear here..." editable="false" />
+                            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                <children>
+                                    <Label text="Adjustment Amount:" minWidth="120.0" />
+                                    <TextField fx:id="adjustmentField" promptText="Enter adjustment amount" />
+                                </children>
+                            </HBox>
+                            <Button fx:id="submitChangesBtn" text="Submit Changes" style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+                        </children>
+                    </VBox>
+                    <TableView fx:id="dataTable" visible="false">
+                        <columns>
+                            <TableColumn fx:id="col1" text="Column 1" />
+                            <TableColumn fx:id="col2" text="Column 2" />
+                            <TableColumn fx:id="col3" text="Column 3" />
+                            <TableColumn fx:id="col4" text="Column 4" />
+                        </columns>
+                    </TableView>
+                    <TextArea fx:id="statusArea" prefRowCount="3" editable="false" style="-fx-background-color: #f8f9fa;" />
+                </children>
+            </VBox>
+        </children>
+    </HBox>
+</children>
+</VBox>

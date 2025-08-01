@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif.GasSupplyController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #34495e; -fx-padding: 15;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="TITAS Gas - Gas Supply Controller Dashboard" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="logoutBtn" mnemonicParsing="false" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+            </children>
+        </HBox>
+        <HBox spacing="20.0">
+            <children>
+                <VBox spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 20;" minWidth="250.0">
+                    <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Supply Control Menu" />
+                        <Separator />
+                        <Button fx:id="scheduleSupplyBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #16a085; -fx-text-fill: white;" text="Schedule Gas Supply" />
+                        <Button fx:id="managePeakBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #16a085; -fx-text-fill: white;" text="Manage Peak Demand" />
+                        <Button fx:id="emergencyAdjustBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Emergency Supply Adjustment" />
+                        <Button fx:id="viewStatsBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #16a085; -fx-text-fill: white;" text="View Usage Statistics" />
+                        <Button fx:id="managePressureBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #16a085; -fx-text-fill: white;" text="Manage Gas Pressure" />
+                        <Button fx:id="approveAdjustBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #16a085; -fx-text-fill: white;" text="Approve Supply Adjustments" />
+                        <Button fx:id="suspendSupplyBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Suspend Gas Supply" />
+                        <Button fx:id="generateReportsBtn" maxWidth="Infinity" mnemonicParsing="false" style="-fx-background-color: #16a085; -fx-text-fill: white;" text="Generate Supply Reports" />
+                    </children>
+                </VBox>
+                <VBox spacing="15.0" HBox.hgrow="ALWAYS" style="-fx-padding: 20;">
+                    <children>
+                        <Label fx:id="workAreaTitle" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Select an option from the menu" />
+                        <Separator />
+                        <VBox fx:id="scheduleSupplyPanel" spacing="10.0" visible="false">
+                            <children>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Select Zone:" minWidth="120.0" />
+                                        <ComboBox fx:id="zoneCombo" promptText="Choose zone" />
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Supply Rate:" minWidth="120.0" />
+                                        <TextField fx:id="supplyRateField" promptText="Enter supply rate (m³/hr)" />
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Schedule Time:" minWidth="120.0" />
+                                        <DatePicker fx:id="scheduleDatePicker" />
+                                        <TextField fx:id="scheduleTimeField" promptText="HH:MM" maxWidth="80.0" />
+                                    </children>
+                                </HBox>
+                                <Button fx:id="submitScheduleBtn" text="Submit Schedule" style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+                            </children>
+                        </VBox>
+                        <VBox fx:id="peakDemandPanel" spacing="10.0" visible="false">
+                            <children>
+                                <Label text="Current Demand Monitoring:" style="-fx-font-weight: bold;" />
+                                <HBox spacing="20.0">
+                                    <children>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Zone A" />
+                                                <ProgressBar fx:id="demandBarA" progress="0.75" />
+                                                <Label fx:id="demandLabelA" text="75%" />
+                                            </children>
+                                        </VBox>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Zone B" />
+                                                <ProgressBar fx:id="demandBarB" progress="0.60" />
+                                                <Label fx:id="demandLabelB" text="60%" />
+                                            </children>
+                                        </VBox>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Zone C" />
+                                                <ProgressBar fx:id="demandBarC" progress="0.85" />
+                                                <Label fx:id="demandLabelC" text="85%" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Adjust Supply Rate:" minWidth="120.0" />
+                                        <Slider fx:id="supplySlider" min="0.0" max="100.0" value="50.0" showTickLabels="true" showTickMarks="true" />
+                                    </children>
+                                </HBox>
+                                <Button fx:id="submitAdjustmentBtn" text="Submit Adjustment" style="-fx-background-color: #f39c12; -fx-text-fill: white;" />
+                            </children>
+                        </VBox>
+                        <VBox fx:id="emergencyPanel" spacing="10.0" visible="false">
+                            <children>
+                                <Label text="EMERGENCY SUPPLY CONTROL" style="-fx-font-weight: bold; -fx-text-fill: red; -fx-font-size: 16px;" />
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Affected Zone:" minWidth="120.0" />
+                                        <ComboBox fx:id="emergencyZoneCombo" promptText="Select affected zone" />
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Emergency Rate:" minWidth="120.0" />
+                                        <TextField fx:id="emergencyRateField" promptText="Enter emergency supply rate" />
+                                    </children>
+                                </HBox>
+                                <TextArea fx:id="emergencyNotesArea" promptText="Emergency notes and reason..." prefRowCount="3" />
+                                <Button fx:id="submitEmergencyBtn" text="Submit Emergency Changes" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" />
+                            </children>
+                        </VBox>
+                        <VBox fx:id="pressurePanel" spacing="10.0" visible="false">
+                            <children>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Select Pipeline:" minWidth="120.0" />
+                                        <ComboBox fx:id="pipelineCombo" promptText="Choose pipeline" />
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Current Pressure:" minWidth="120.0" />
+                                        <Label fx:id="currentPressureLabel" text="-- bar" style="-fx-font-weight: bold;" />
+                                    </children>
+                                </HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label text="Set Pressure Level:" minWidth="120.0" />
+                                        <Spinner fx:id="pressureSpinner" min="0" max="10" initialValue="5" editable="true" />
+                                        <Label text="bar" />
+                                    </children>
+                                </HBox>
+                                <Button fx:id="updatePressureBtn" text="Update Pressure" style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+                            </children>
+                        </VBox>
+                        <TableView fx:id="supplyDataTable" visible="false">
+                            <columns>
+                                <TableColumn fx:id="supplyCol1" text="Zone" />
+                                <TableColumn fx:id="supplyCol2" text="Supply Rate" />
+                                <TableColumn fx:id="supplyCol3" text="Pressure" />
+                                <TableColumn fx:id="supplyCol4" text="Status" />
+                                <TableColumn fx:id="supplyCol5" text="Last Updated" />
+                            </columns>
+                        </TableView>
+                        <TextArea fx:id="statusArea" prefRowCount="3" editable="false" style="-fx-background-color: #f8f9fa;" />
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button fx:id="downloadReportBtn" text="Download Report" style="-fx-background-color: #9b59b6; -fx-text-fill: white;" visible="false" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>
