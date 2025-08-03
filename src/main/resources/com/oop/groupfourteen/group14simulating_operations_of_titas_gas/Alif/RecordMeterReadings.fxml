@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif.RecordMeterReadingsController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Record Meter Readings" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="logoutBtn" mnemonicParsing="false" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+            </children>
+        </HBox>
+
+        <VBox spacing="20.0" style="-fx-padding: 30;">
+            <children>
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Select Customer" />
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="Customer ID:" minWidth="120.0" />
+                        <TextField fx:id="customerIdField" promptText="Enter customer ID" prefWidth="200.0" />
+                        <Button fx:id="selectCustomerBtn" text="Select Customer" style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+                    </children>
+                </HBox>
+
+                <Separator />
+
+                <VBox fx:id="meterReadingSection" spacing="15.0" visible="false">
+                    <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Enter Meter Reading" />
+
+                        <HBox spacing="10.0" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Previous Reading:" minWidth="120.0" />
+                                <Label fx:id="previousReadingLabel" text="--" style="-fx-font-weight: bold;" />
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="10.0" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="New Reading:" minWidth="120.0" />
+                                <TextField fx:id="meterReadingField" promptText="Enter current meter reading" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="10.0" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Reading Date:" minWidth="120.0" />
+                                <DatePicker fx:id="readingDatePicker" prefWidth="200.0" />
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="10.0" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Notes:" minWidth="120.0" />
+                                <TextArea fx:id="notesArea" promptText="Additional notes (optional)" prefRowCount="3" prefWidth="300.0" />
+                            </children>
+                        </HBox>
+
+                        <Button fx:id="submitReadingBtn" text="Submit Reading" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px;" prefWidth="150.0" />
+                    </children>
+                </VBox>
+
+                <Separator />
+
+                <VBox fx:id="confirmationSection" spacing="10.0" visible="false">
+                    <children>
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: green;" text="Confirmation" />
+                        <TextArea fx:id="confirmationArea" editable="false" prefRowCount="4" style="-fx-background-color: #d5f4e6;" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>
