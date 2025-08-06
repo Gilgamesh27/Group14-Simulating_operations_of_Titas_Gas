@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="421.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.ManageGasDistributionNetworkController">
+   <children>
+      <Label layoutX="163.0" layoutY="26.0" text=" &quot;Manage Gas Distribution Network&quot;">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="outputLabel" layoutX="77.0" layoutY="273.0" prefHeight="119.0" prefWidth="524.0" text="Show status or output message" />
+      <TextField fx:id="valveInputField" layoutX="59.0" layoutY="129.0" prefHeight="42.0" prefWidth="202.0" text="For user to input valve adjustment" />
+      <TextField fx:id="manualChangeField" layoutX="59.0" layoutY="199.0" prefHeight="42.0" prefWidth="202.0" text="For entering manual change data" />
+      <Text fx:id="pressureText" layoutX="59.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shows real-time pressure/flow" wrappingWidth="167.20000000000005" />
+      <Button layoutX="307.0" layoutY="137.0" mnemonicParsing="false" onAction="#adjustValveButton" text="Trigger valve adjustment" />
+      <Button layoutX="478.0" layoutY="137.0" mnemonicParsing="false" onAction="#detectAnomalyButton" text="Trigger anomaly detection" />
+      <Button layoutX="299.0" layoutY="207.0" mnemonicParsing="false" onAction="#recordManualButton" text="Record the manual changes" />
+      <Button layoutX="480.0" layoutY="207.0" mnemonicParsing="false" onAction="#generateReportButton" text="Show performance report" />
+   </children>
+</AnchorPane>
