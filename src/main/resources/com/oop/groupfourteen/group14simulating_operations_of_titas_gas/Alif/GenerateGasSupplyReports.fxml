@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif.GenerateGasSupplyReportsController">
+   <children>
+      <Label text="Generate Gas Supply Reports">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      
+      <GridPane hgap="10.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Report Type:" />
+            <ComboBox fx:id="reportTypeComboBox" prefWidth="200.0" promptText="Select Supply Report Type" GridPane.columnIndex="1" />
+            
+            <Label text="Date Range From:" GridPane.rowIndex="1" />
+            <DatePicker fx:id="fromDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            
+            <Label text="Date Range To:" GridPane.rowIndex="2" />
+            <DatePicker fx:id="toDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </GridPane>
+      
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Button fx:id="fetchDataButton" onAction="#handleFetchData" text="Fetch Data" />
+            <Button fx:id="viewReportButton" onAction="#handleViewReport" text="View Report" />
+            <Button fx:id="downloadReportButton" onAction="#handleDownloadReport" text="Download Report" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      
+      <TableView fx:id="supplyReportTable" prefHeight="200.0">
+         <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Date" />
+            <TableColumn fx:id="zoneColumn" prefWidth="100.0" text="Zone" />
+            <TableColumn fx:id="supplyRateColumn" prefWidth="120.0" text="Supply Rate (m³/hr)" />
+            <TableColumn fx:id="totalSupplyColumn" prefWidth="120.0" text="Total Supply (m³)" />
+            <TableColumn fx:id="pressureColumn" prefWidth="100.0" text="Pressure (PSI)" />
+         </columns>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </TableView>
+      
+      <HBox spacing="20.0">
+         <children>
+            <Label fx:id="totalSupplyLabel" text="Total Supply: 0 m³">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="averagePressureLabel" text="Average Pressure: 0 PSI">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

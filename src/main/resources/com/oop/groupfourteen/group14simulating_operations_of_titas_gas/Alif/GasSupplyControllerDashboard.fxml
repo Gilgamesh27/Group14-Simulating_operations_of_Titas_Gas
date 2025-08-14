@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif.GasSupplyControllerDashboardController" prefWidth="1200" prefHeight="800" style="-fx-background-color: #ecf0f1;">
+    
+    <top>
+        <HBox style="-fx-background-color: #e67e22; -fx-padding: 15;" alignment="CENTER_LEFT" spacing="20">
+            <Label text="Titas Gas - Gas Supply Controller Dashboard" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="userInfoLabel" text="Welcome, Gas Supply Controller" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+            <Button fx:id="signoutButton" text="Sign Out" onAction="#handleSignOut" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16;" />
+        </HBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                
+                <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <Label text="Gas Supply Management" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    <HBox spacing="15">
+                        <Button text="Schedule Gas Supply" onAction="#openScheduleGasSupply" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                        <Button text="Manage Peak Demand" onAction="#openManagePeakDemand" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                        <Button text="Adjust Supply Emergency" onAction="#openAdjustSupplyEmergency" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                    </HBox>
+                </VBox>
+                
+                <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <Label text="System Control" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    <HBox spacing="15">
+                        <Button text="Manage Gas Pressure Levels" onAction="#openManageGasPressureLevels" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                        <Button text="Approve Supply Adjustments" onAction="#openApproveSupplyAdjustments" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                        <Button text="Suspend Gas Supply" onAction="#openSuspendGasSupply" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                    </HBox>
+                </VBox>
+                
+                <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <Label text="Reports and Analytics" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    <HBox spacing="15">
+                        <Button text="View Usage Statistics" onAction="#openViewUsageStatistics" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                        <Button text="Generate Gas Supply Reports" onAction="#openGenerateGasSupplyReports" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 10;" prefWidth="200" />
+                    </HBox>
+                </VBox>
+                
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+</BorderPane>
