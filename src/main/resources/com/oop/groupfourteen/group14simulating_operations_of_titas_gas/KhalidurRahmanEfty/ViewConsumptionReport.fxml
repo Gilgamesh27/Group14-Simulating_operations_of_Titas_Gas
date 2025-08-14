@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.KhalidurRahmanEfty.ViewConsumptionReport">
+    <children>
+        <Label text="View Consumption Report">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </Label>
+
+        <TableView fx:id="adjustmentRequestsTable" prefHeight="200.0">
+            <columns>
+                <TableColumn fx:id="requestIdColumn" prefWidth="80.0" text="Area" />
+                <TableColumn fx:id="zoneColumn" prefWidth="100.0" text="Date" />
+                <TableColumn fx:id="currentRateColumn" prefWidth="120.0" text="Consumption" />
+                <TableColumn fx:id="requestedRateColumn" prefWidth="120.0" text="Peak Time" />
+            </columns>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </TableView>
+
+        <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Selected Area:" />
+
+                <Label text="Select Date:" GridPane.rowIndex="1" />
+                <ComboBox prefWidth="150.0" promptText="Area" GridPane.columnIndex="1" />
+                <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+            <VBox.margin>
+                <Insets left="10.0" right="10.0" />
+            </VBox.margin>
+        </GridPane>
+
+        <HBox alignment="CENTER" spacing="10.0">
+            <children>
+                <Button fx:id="viewAdjustmentButton" onAction="#handleViewAdjustment" text="View Graph" />
+                <Button fx:id="approveButton" onAction="#handleApproveChanges" text="Export PDF" />
+                <Button fx:id="submitButton" onAction="#handleSubmitApproval" text="Export Excel" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>
+
