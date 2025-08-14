@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,36 +49,37 @@ public class LoginController
         String password = passwordField.getText();
 
         if (userId.isEmpty() || password.isEmpty()) {
-            displayError("Error: User ID and Password cannot be empty");
+            infoLabel.setText("Error: User ID and Password cannot be empty");
             return;
         }
         User user = chker(userId, password);
         if (user != null) {
             openUserDashboard(user);
         } else {
-            displayError("Error: Invalid User ID or Password");
+            infoLabel.setText("Error: Invalid User ID or Password");
+            infoLabel.setTextFill(Color.RED);
         }
     }
 
     @javafx.fxml.FXML
     public void handleCreateAccount(ActionEvent actionEvent) {
         infoLabel.setText("Please contact your HR department to create a new account.");
+        infoLabel.setTextFill(Color.ORANGE);
 
     }
     @javafx.fxml.FXML
     public void forgotPasswordButton(ActionEvent actionEvent) {
         infoLabel.setText("Please contact your system administrator to reset your password.");
+        infoLabel.setTextFill(Color.TEAL);
 
     }
-    private void displayError(String msg) {
 
-        infoLabel.setStyle("-fx-text-fill: red;");
-    }
     private void openUserDashboard(User user) {
         try {
             URL resource = getClass().getResource("/" + user.getDashboardFile());
             if (resource == null) {
-                displayError("FXML file not found: " + user.getDashboardFile());
+                infoLabel.setText("FXML file not found: " + user.getDashboardFile());
+                infoLabel.setTextFill(Color.RED);
                 return;
             }
             Parent root = FXMLLoader.load(resource);
@@ -92,7 +94,8 @@ public class LoginController
 
         } catch (IOException e) {
             e.printStackTrace();
-            displayError("Could not load dashboard: " + e.getMessage());
+            infoLabel.setText("Could not load dashboard: " + e.getMessage());
+            infoLabel.setTextFill(Color.RED);
         }
     }
     private User chker(String userId, String password) {
