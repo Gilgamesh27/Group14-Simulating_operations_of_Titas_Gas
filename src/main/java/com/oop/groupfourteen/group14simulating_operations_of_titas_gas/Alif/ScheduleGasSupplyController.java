@@ -1,39 +1,53 @@
 package com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif;
 
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class ScheduleGasSupplyController {
-    @javafx.fxml.FXML
-    private DatePicker supplyDatePicker;
-    @javafx.fxml.FXML
-    private TextArea confirmationArea;
-    @javafx.fxml.FXML
-    private ComboBox zoneComboBox;
-    @javafx.fxml.FXML
-    private Button submitButton;
-    @javafx.fxml.FXML
-    private Button clearButton;
-    @javafx.fxml.FXML
-    private Button inputScheduleButton;
-    @javafx.fxml.FXML
-    private TextField supplyTimeField;
-    @javafx.fxml.FXML
-    private TextField supplyRateField;
+public class ScheduleGasSupplyController implements Initializable {
 
-    @javafx.fxml.FXML
-    public void initialize() {
+    @FXML private ComboBox<String> zoneComboBox;
+    @FXML private TextField supplyTimeField;
+    @FXML private DatePicker supplyDatePicker;
+    @FXML private TextField supplyRateField;
+    @FXML private TextArea confirmationArea;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        zoneComboBox.setItems(FXCollections.observableArrayList(
+                "Zone A", "Zone B", "Zone C", "Zone D"
+        ));
+        supplyDatePicker.setValue(LocalDate.now());
     }
 
-    @javafx.fxml.FXML
-    public void handleInputSchedule(ActionEvent actionEvent) {
+    @FXML
+    private void handleInputSchedule() {
+        if (zoneComboBox.getValue() == null || supplyTimeField.getText().isEmpty() || supplyRateField.getText().isEmpty()) return;
+        confirmationArea.setText(
+                "Schedule Preview:\nZone: " + zoneComboBox.getValue() +
+                        "\nDate: " + supplyDatePicker.getValue() +
+                        "\nTime: " + supplyTimeField.getText() +
+                        "\nRate: " + supplyRateField.getText() + " m³/hr"
+        );
     }
 
-    @javafx.fxml.FXML
-    public void handleClear(ActionEvent actionEvent) {
+    @FXML
+    private void handleSubmitSchedule() {
+        if (confirmationArea.getText().isEmpty()) return;
+        confirmationArea.setText("Schedule Submitted for Zone: " + zoneComboBox.getValue());
     }
 
-    @javafx.fxml.FXML
-    public void handleSubmitSchedule(ActionEvent actionEvent) {
+    @FXML
+    private void handleClear() {
+        zoneComboBox.setValue(null);
+        supplyTimeField.clear();
+        supplyDatePicker.setValue(LocalDate.now());
+        supplyRateField.clear();
+        confirmationArea.clear();
     }
 }

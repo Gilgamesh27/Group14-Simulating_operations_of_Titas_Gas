@@ -1,40 +1,55 @@
 package com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Alif;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.Random;
 
-public class ManagePeakDemandController {
+public class ManagePeakDemandController implements Initializable {
+
     @javafx.fxml.FXML
     private Label currentDemandLabel;
     @javafx.fxml.FXML
-    private Button submitButton;
-    @javafx.fxml.FXML
-    private TextArea flowUpdateArea;
-    @javafx.fxml.FXML
-    private Button adjustButton;
-    @javafx.fxml.FXML
-    private TextArea demandMonitorArea;
+    private TextField newSupplyRateField;
     @javafx.fxml.FXML
     private Button monitorButton;
     @javafx.fxml.FXML
-    private TextField newSupplyRateField;
-
+    private Button adjustButton;
     @javafx.fxml.FXML
-    public void initialize() {
+    private Button submitButton;
+    @javafx.fxml.FXML
+    private TextArea demandMonitorArea;
+    @javafx.fxml.FXML
+    private TextArea flowUpdateArea;
+
+    private double currentDemand;
+    private Random random = new Random();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        currentDemand = 2500 + random.nextDouble() * 1000;
+        currentDemandLabel.setText(String.format("%.2f m³/hr", currentDemand));
     }
 
     @javafx.fxml.FXML
-    public void handleSubmitAdjustment(ActionEvent actionEvent) {
+    private void handleMonitorDemand() {
+        currentDemand = 2000 + random.nextDouble() * 2000;
+        currentDemandLabel.setText(String.format("%.2f m³/hr", currentDemand));
+        demandMonitorArea.setText("Demand monitoring completed.");
     }
 
     @javafx.fxml.FXML
-    public void handleAdjustSupplyRate(ActionEvent actionEvent) {
+    private void handleAdjustSupplyRate() {
+        if (!newSupplyRateField.getText().trim().isEmpty()) {
+            flowUpdateArea.setText("Supply rate adjustment ready.");
+        }
     }
 
     @javafx.fxml.FXML
-    public void handleMonitorDemand(ActionEvent actionEvent) {
+    private void handleSubmitAdjustment() {
+        if (!flowUpdateArea.getText().isEmpty()) {
+            flowUpdateArea.setText("Supply rate adjustment submitted.");
+        }
     }
 }
