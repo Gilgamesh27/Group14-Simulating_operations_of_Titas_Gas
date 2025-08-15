@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.ScheduleTechnicianVisitsController">
+   <children>
+      <Label layoutX="208.0" layoutY="24.0" text="&quot;Schedule Technician Visits&quot;">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="184.0" layoutY="303.0" prefHeight="82.0" prefWidth="241.0" text="Display status messages" />
+      <TextField fx:id="customerIdField" layoutX="27.0" layoutY="80.0" text="Input customer ID" />
+      <TextField fx:id="technicianIdField" layoutX="27.0" layoutY="148.0" text="Assign available technician ID" />
+      <TextField fx:id="visitTimeField" layoutX="26.0" layoutY="225.0" text="Enter visit time" />
+      <DatePicker fx:id="visitDatePicker" layoutX="217.0" layoutY="225.0" />
+      <Button layoutX="213.0" layoutY="80.0" mnemonicParsing="false" onAction="#receiveRequestButton" text="Receive service request" />
+      <Button layoutX="217.0" layoutY="148.0" mnemonicParsing="false" onAction="#assignTechnicianButton" text="Assign technician" />
+      <Button layoutX="57.0" layoutY="267.0" mnemonicParsing="false" onAction="#scheduleVisitButton" text="Schedule visit" />
+      <Button layoutX="198.0" layoutY="267.0" mnemonicParsing="false" onAction="#logVisitButton" text="Log technician visit in system" />
+      <Button layoutX="395.0" layoutY="267.0" mnemonicParsing="false" onAction="#confirmCompletionButton" text="Confirm completion &amp; close ticket" />
+   </children>
+</AnchorPane>

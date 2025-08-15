@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.MonitorPipelineInfrastructureController">
+   <children>
+      <Label layoutX="159.0" layoutY="29.0" text="“Monitor Pipeline Infrastructure”">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="maintenanceStatus" layoutX="38.0" layoutY="100.0" prefHeight="32.0" prefWidth="225.0" text="View current pipeline maintenance status" />
+      <Label fx:id="faultZoneOutput" layoutX="38.0" layoutY="191.0" text="Show highlighted/faulty zone info " />
+      <Label fx:id="statusOutput" layoutX="38.0" layoutY="275.0" prefHeight="86.0" prefWidth="514.0" text="Display action results" />
+      <Button layoutX="211.0" layoutY="139.0" mnemonicParsing="false" onAction="#zoomFaultButton" text="Zoom &amp; highlight faulty zones" />
+      <Button layoutX="38.0" layoutY="230.0" mnemonicParsing="false" onAction="#flagDamageButton" text="Flag damaged areas" />
+      <Button layoutX="396.0" layoutY="230.0" mnemonicParsing="false" onAction="#archiveButton" text="Archive maintenance data" />
+      <Button layoutX="181.0" layoutY="230.0" mnemonicParsing="false" onAction="#validateSensorButton" text="Validate sensor vs inspection data" />
+   </children>
+</AnchorPane>
