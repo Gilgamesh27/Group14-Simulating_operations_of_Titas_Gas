@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tunaz.NewGasConnectionController">
+   <children>
+      <VBox layoutX="27.0" layoutY="59.0" spacing="5.0" />
+      <HBox layoutX="27.0" layoutY="59.0" spacing="20.0" />
+      <Label fx:id="statusLabel" layoutX="27.0" layoutY="59.0" text="" />
+      <Label fx:id="formLabel" layoutX="27.0" layoutY="50.0" style="-fx-font-weight: bold;" text="Application Form:" />
+      <GridPane hgap="10.0" layoutX="27.0" layoutY="76.0" vgap="10.0">
+         <children>
+            <Label fx:id="nameLabel" blendMode="DARKEN" text="Full Name:" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label fx:id="nidnumberLabel" text="NID Number:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="nidField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="numberLabel" text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="emailLabel" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="addressLabel" text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextArea fx:id="addressArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="connectiontypeLabel" text="Connection Type:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <ComboBox fx:id="ConnectiontypeCombobox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="properttypeLabel" text="Property Type:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <ComboBox fx:id="propertyTypeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="addressTextfield" prefHeight="46.0" prefWidth="479.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints maxHeight="37.33333333333333" minHeight="30.000005086263016" prefHeight="35.33333333333333" />
+            <RowConstraints maxHeight="66.00001017252603" minHeight="12.666666666666671" prefHeight="14.666666666666671" />
+            <RowConstraints maxHeight="60.666656494140625" minHeight="12.666661580403655" prefHeight="39.33333841959636" />
+            <RowConstraints maxHeight="54.66666666666666" minHeight="22.000020345052093" prefHeight="52.66666666666666" />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <Label fx:id="requireddocumentTextfield" layoutX="27.0" layoutY="375.0" style="-fx-font-weight: bold;" text="Required Documents:" />
+      <GridPane hgap="10.0" layoutX="27.0" layoutY="416.0" vgap="10.0">
+         <children>
+            <Label fx:id="nidLabel" text="NID Copy:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <HBox spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               <children>
+                  <TextField fx:id="nidFileField" editable="false" />
+                  <Button onAction="#browseNID" text="Browse" />
+               </children>
+            </HBox>
+            <Label fx:id="utilityLabel" text="Utility Bill:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <HBox spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="utilityFileField" editable="false" />
+                  <Button onAction="#browseUtilityBill" text="Browse" />
+               </children>
+            </HBox>
+            <Label fx:id="photoLabel" text="Photo" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <HBox spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="photoFileField" editable="false" />
+                  <Button onAction="#browsePhoto" text="Browse" />
+               </children>
+            </HBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="26.666646321614582" minHeight="0.0" prefHeight="26.666646321614582" />
+            <RowConstraints maxHeight="50.66666666666666" minHeight="24.00002034505208" prefHeight="24.00002034505208" />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <HBox layoutX="10.0" layoutY="10.0" spacing="20.0" />
+      <Label fx:id="statusLabel1" layoutX="10.0" layoutY="10.0" text="" />
+      <HBox layoutX="27.0" layoutY="522.0" prefHeight="17.0" prefWidth="278.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#submitapplicationButton" prefHeight="25.0" prefWidth="122.0" text="Submit Application" textAlignment="RIGHT" />
+            <Button mnemonicParsing="false" onAction="#clearformButton" text="Clear Form" />
+         </children>
+      </HBox>
+      <Button layoutX="550.0" layoutY="27.0" mnemonicParsing="false" onAction="#gobackButton" text="Go Back" />
+      <TextField fx:id="applicationforgasTextfield" layoutX="27.0" layoutY="15.0" text="Apply For Gas Connection">
+         <font>
+            <Font name="Bell MT Bold" size="12.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
