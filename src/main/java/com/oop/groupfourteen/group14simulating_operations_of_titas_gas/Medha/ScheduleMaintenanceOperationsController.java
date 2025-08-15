@@ -24,6 +24,8 @@ public class ScheduleMaintenanceOperationsController
 
     @FXML
     public void logTaskButton(ActionEvent actionEvent) {
+
+
     }
 
     @FXML
