@@ -18,10 +18,13 @@ public class MonitorValveOperationsController
 
     @javafx.fxml.FXML
     public void initialize() {
+        valveStatusLabel.setText("Valves OK\nValve 1: Open\nValve 2: Closed\nValve 3: Open");
     }
 
     @javafx.fxml.FXML
     public void validateValveButton(ActionEvent actionEvent) {
+
+        valveOutputLabel.setText("Auto-feedback matches current valve positions.\nValidation successful.");
     }
 
     @javafx.fxml.FXML
@@ -30,9 +33,19 @@ public class MonitorValveOperationsController
 
     @javafx.fxml.FXML
     public void overrideButton(ActionEvent actionEvent) {
+
+        String overriddenValve = overrideValveField.getText();
+        if (overriddenValve.isEmpty()) {
+            valveOutputLabel.setText("Enter a valve ID to override.");
+        } else {
+            valveOutputLabel.setText("Manual override applied to " + overriddenValve);
+        }
     }
 
     @javafx.fxml.FXML
     public void archiveHistoryButton(ActionEvent actionEvent) {
+
+        valveOutputLabel.setText("Valve operation history archived successfully.");
+        String overriddenValve = "";
     }
-}
+    }
