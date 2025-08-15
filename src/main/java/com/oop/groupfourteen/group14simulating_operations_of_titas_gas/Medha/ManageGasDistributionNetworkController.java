@@ -1,5 +1,6 @@
 package com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -60,5 +61,17 @@ public class ManageGasDistributionNetworkController {
     public void generateReport() {
         String report = "Performance Report:\nPressure: " + currentPressure + " psi\nFlow: 1200 m³/h\nValve Status: OK";
         outputLabel.setText(report);
+    }
+
+    public void adjustValveButton(ActionEvent actionEvent) {
+    }
+
+    public void detectAnomalyButton(ActionEvent actionEvent) {
+    }
+
+    public void recordManualButton(ActionEvent actionEvent) {
+    }
+
+    public void generateReportButton(ActionEvent actionEvent) {
     }
 }

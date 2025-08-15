@@ -18,7 +18,7 @@
       <Label fx:id="outputLabel" layoutX="77.0" layoutY="273.0" prefHeight="119.0" prefWidth="524.0" text="Show status or output message" />
       <TextField fx:id="valveInputField" layoutX="59.0" layoutY="129.0" prefHeight="42.0" prefWidth="202.0" text="For user to input valve adjustment" />
       <TextField fx:id="manualChangeField" layoutX="59.0" layoutY="199.0" prefHeight="42.0" prefWidth="202.0" text="For entering manual change data" />
-      <Text fx:id="pressureText" layoutX="59.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shows real-time pressure/flow" wrappingWidth="167.20000000000005" />
+      <Text fx:id="" layoutX="59.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shows real-time pressure/flow" wrappingWidth="167.20000000000005" />
       <Button layoutX="307.0" layoutY="137.0" mnemonicParsing="false" onAction="#adjustValveButton" text="Trigger valve adjustment" />
       <Button layoutX="478.0" layoutY="137.0" mnemonicParsing="false" onAction="#detectAnomalyButton" text="Trigger anomaly detection" />
       <Button layoutX="299.0" layoutY="207.0" mnemonicParsing="false" onAction="#recordManualButton" text="Record the manual changes" />
