@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.CommunicateServiceInterruptionsController">
+   <children>
+      <Label layoutX="133.0" layoutY="24.0" text="“Communicate Service Interruptions”">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="155.0" layoutY="252.0" prefHeight="96.0" prefWidth="309.0" text="Show status updates" />
+      <TextField fx:id="maintenanceInfoField" layoutX="187.0" layoutY="77.0" prefHeight="26.0" prefWidth="225.0" text="Input maintenance interruption info" />
+      <ComboBox fx:id="affectedZonesCombo" layoutX="196.0" layoutY="116.0" prefHeight="26.0" prefWidth="206.0" promptText="Select affected zones" />
+      <Button layoutX="14.0" layoutY="161.0" mnemonicParsing="false" onAction="#notifyCustomersButton" text="Notify all affected customers" />
+      <Button layoutX="392.0" layoutY="161.0" mnemonicParsing="false" onAction="#generateReportButton" text="Generate service disruption report" />
+      <Button layoutX="235.0" layoutY="161.0" mnemonicParsing="false" onAction="#logNotificationsButton" text="Log notifications sent" />
+   </children>
+</AnchorPane>

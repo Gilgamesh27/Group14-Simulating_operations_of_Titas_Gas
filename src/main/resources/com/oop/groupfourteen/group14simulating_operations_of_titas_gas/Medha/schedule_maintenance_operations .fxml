@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.ScheduleMaintenanceOperationsController">
+   <children>
+      <Label layoutX="131.0" layoutY="25.0" text="“Schedule Maintenance Operations”">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="maintenanceOutputLabel" layoutX="141.0" layoutY="211.0" prefHeight="134.0" prefWidth="304.0" text="Output messages" />
+      <TextField fx:id="scheduleField" layoutX="33.0" layoutY="91.0" text="Input date" />
+      <TextField fx:id="crewField" layoutX="33.0" layoutY="147.0" text="Enter crew" />
+      <Button layoutX="342.0" layoutY="91.0" mnemonicParsing="false" onAction="#notifyTeamButton" text="Notify the crew with assigned task" />
+      <Button layoutX="262.0" layoutY="147.0" mnemonicParsing="false" onAction="#logTaskButton" text="Log scheduled task" />
+      <Button layoutX="387.0" layoutY="147.0" mnemonicParsing="false" onAction="#generatePlanButton" text="Generate maintenance plan report" />
+   </children>
+</AnchorPane>
