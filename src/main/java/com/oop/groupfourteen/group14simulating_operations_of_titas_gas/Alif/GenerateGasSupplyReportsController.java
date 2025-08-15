@@ -21,17 +21,21 @@ public class GenerateGasSupplyReportsController {
     @javafx.fxml.FXML
     private Label totalSupplyLabel;
     @javafx.fxml.FXML
-    private Button downloadReportButton;
-    @javafx.fxml.FXML
     private Label averagePressureLabel;
-    @javafx.fxml.FXML
-    private Button viewReportButton;
     @javafx.fxml.FXML
     private ComboBox reportTypeComboBox;
     @javafx.fxml.FXML
     private TableView supplyReportTable;
     @javafx.fxml.FXML
     private TableColumn dateColumn;
+    @javafx.fxml.FXML
+    private Button loadFromBinButton;
+    @javafx.fxml.FXML
+    private Button saveToBinButton;
+    @javafx.fxml.FXML
+    private Button generatePDFButton;
+    @javafx.fxml.FXML
+    private Button viewChartsButton;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -41,11 +45,27 @@ public class GenerateGasSupplyReportsController {
     public void handleFetchData(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleViewReport(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleDownloadReport(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleViewCharts(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleLoadFromBin(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleGeneratePDF(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleSaveToBin(ActionEvent actionEvent) {
     }
 }

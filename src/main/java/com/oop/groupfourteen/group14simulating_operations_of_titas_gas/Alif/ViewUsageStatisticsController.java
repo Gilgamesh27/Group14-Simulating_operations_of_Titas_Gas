@@ -30,9 +30,7 @@ public class ViewUsageStatisticsController {
     @javafx.fxml.FXML
     private TableColumn usageRateColumn;
     @javafx.fxml.FXML
-    private VBox chartContainer;
-    @javafx.fxml.FXML
-    private Button showPieChartButton;
+    private Button viewChartsButton;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -50,7 +48,11 @@ public class ViewUsageStatisticsController {
     public void handleDownloadReport(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleShowPieChart(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleViewCharts(ActionEvent actionEvent) {
     }
 }
