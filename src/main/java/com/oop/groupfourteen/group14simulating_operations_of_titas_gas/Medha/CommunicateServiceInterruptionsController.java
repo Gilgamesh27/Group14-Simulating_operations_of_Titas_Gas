@@ -16,17 +16,25 @@ public class CommunicateServiceInterruptionsController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        affectedZonesCombo.getItems().addAll("Zone A", "Zone B", "Zone C");
     }
 
     @javafx.fxml.FXML
     public void notifyCustomersButton(ActionEvent actionEvent) {
+
+        statusLabel.setText("Customers in " + affectedZonesCombo.getValue() + " notified.");
     }
 
     @javafx.fxml.FXML
     public void logNotificationsButton(ActionEvent actionEvent) {
+
+        statusLabel.setText("Notifications logged.");
     }
 
     @javafx.fxml.FXML
     public void generateReportButton(ActionEvent actionEvent) {
+
+        statusLabel.setText("Service disruption report generated.");
     }
 }
