@@ -1,6 +1,9 @@
 package com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -8,30 +11,55 @@ import javafx.scene.control.TextArea;
 
 public class GenerateDistributionAnalyticsController
 {
-    @javafx.fxml.FXML
+    @FXML
     private TableView analyticsTable;
-    @javafx.fxml.FXML
+    @FXML
     private TableColumn colMonth;
-    @javafx.fxml.FXML
+    @FXML
     private TableColumn colUsage;
-    @javafx.fxml.FXML
+    @FXML
     private TextArea findingsArea;
-    @javafx.fxml.FXML
+    @FXML
     private Label statusLabel;
 
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
+
+        colMonth.setCellValueFactory(cellData -> cellData.getClass());
+        colUsage.setCellValueFactory(cellData -> cellData.getClass().isArray());
+
+        ObservableList analyticsData = null;
+        analyticsTable.setItems(analyticsData);
+
+        
+
+        updatePressureTrendChart();
     }
 
-    @javafx.fxml.FXML
+    private void updatePressureTrendChart() {
+
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("Pressure Trends");
+        series.getData().add(new XYChart.Data<>("January", 75));
+        series.getData().add(new XYChart.Data<>("February", 80));
+        series.getData().add(new XYChart.Data<>("March", 78));
+    }
+
+    @FXML
     public void archiveButton(ActionEvent actionEvent) {
+
+        statusLabel.setText("Analytics report archived successfully.");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void interpretTrendsButton(ActionEvent actionEvent) {
+
+        findingsArea.setText("Trend analysis: No significant anomalies detected.");
+        statusLabel.setText("Trends interpreted successfully.");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void fetchDataButton(ActionEvent actionEvent) {
+        statusLabel.setText("Monthly gas usage data fetched successfully.");
     }
 }
