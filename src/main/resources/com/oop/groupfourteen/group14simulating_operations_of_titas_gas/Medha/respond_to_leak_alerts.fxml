@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.RespondToLeakAlertsController">
+   <children>
+      <Label layoutX="168.0" layoutY="31.0" text="“Respond to Leak Alerts”">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="alertLabel" layoutX="71.0" layoutY="96.0" prefHeight="32.0" prefWidth="230.0" text="Show simulated automatic gas leak alert " />
+      <Label fx:id="responseOutput" layoutX="69.0" layoutY="260.0" prefHeight="118.0" prefWidth="381.0" text="Show outputs" />
+      <Button layoutX="301.0" layoutY="145.0" mnemonicParsing="false" onAction="#shutdownButton" text="Shut down affected zone " />
+      <Button layoutX="71.0" layoutY="145.0" mnemonicParsing="false" onAction="#validateAlertButton" text="Validate alert using sensor" />
+      <Button layoutX="71.0" layoutY="200.0" mnemonicParsing="false" onAction="#recordActionButton" text="Record shutdown with timestamp" />
+      <Button layoutX="300.0" layoutY="200.0" mnemonicParsing="false" onAction="#logIncidentButton" text="Log and close incident " />
+   </children>
+</AnchorPane>

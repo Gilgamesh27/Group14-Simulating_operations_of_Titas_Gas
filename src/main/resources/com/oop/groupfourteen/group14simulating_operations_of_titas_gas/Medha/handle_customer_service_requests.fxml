@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="531.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.HandleCustomerServiceRequestsController">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" text="&quot;Handle Customer Service Requests&quot;">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="203.0" layoutY="402.0" prefHeight="104.0" prefWidth="200.0" text="Display operation status or messages" />
+      <TextField fx:id="requestField" layoutX="208.0" layoutY="56.0" prefHeight="26.0" prefWidth="183.0" text="Input new customer request" />
+      <TextField fx:id="customerIdField" layoutX="225.0" layoutY="141.0" text="Input customer ID" />
+      <TextArea fx:id="logArea" layoutX="200.0" layoutY="214.0" prefHeight="128.0" prefWidth="200.0" text="Log request details and status" />
+      <Button layoutX="238.0" layoutY="96.0" mnemonicParsing="false" onAction="#receiveRequestButton" text="Receive new request" />
+      <Button layoutX="46.0" layoutY="176.0" mnemonicParsing="false" onAction="#verifyCustomerButton" text="Verify customer identity" />
+      <Button layoutX="238.0" layoutY="176.0" mnemonicParsing="false" onAction="#approveButton" text="Approve service issue" />
+      <Button layoutX="418.0" layoutY="176.0" mnemonicParsing="false" onAction="#escalateButton" text="Escalate service issue" />
+      <Button layoutX="214.0" layoutY="351.0" mnemonicParsing="false" onAction="#closeRequestButton" text="Close request after resolution" />
+   </children>
+</AnchorPane>

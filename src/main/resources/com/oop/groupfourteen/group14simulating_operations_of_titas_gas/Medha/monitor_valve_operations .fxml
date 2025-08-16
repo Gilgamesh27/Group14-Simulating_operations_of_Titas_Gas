@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="612.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.groupfourteen.group14simulating_operations_of_titas_gas.Medha.MonitorValveOperationsController">
+   <children>
+      <Label layoutX="172.0" layoutY="14.0" text=" “Monitor Valve Operations”">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="valveStatusLabel" layoutX="57.0" layoutY="72.0" text="Shows current valve status " />
+      <Label fx:id="valveOutputLabel" layoutX="81.0" layoutY="296.0" prefHeight="94.0" prefWidth="398.0" text="Output result" />
+      <TextField fx:id="overrideValveField" layoutX="57.0" layoutY="112.0" prefHeight="28.0" prefWidth="210.0" text="User inputs valve ID or command " />
+      <Button layoutX="94.0" layoutY="175.0" mnemonicParsing="false" onAction="#overrideButton" text="Apply manual override" />
+      <Button layoutX="319.0" layoutY="175.0" mnemonicParsing="false" onAction="#validateValveButton" text="Validate auto feedback " />
+      <Button layoutX="96.0" layoutY="237.0" mnemonicParsing="false" onAction="#recordInterventionButton" text="Record manual action" />
+      <Button layoutX="313.0" layoutY="237.0" mnemonicParsing="false" onAction="#archiveHistoryButton" text="Archive operation history " />
+      <PieChart fx:id="severityChart" layoutX="75.0" layoutY="402.0" prefHeight="186.0" prefWidth="322.0" />
+   </children>
+</AnchorPane>
