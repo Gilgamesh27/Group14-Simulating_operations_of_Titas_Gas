@@ -53,11 +53,21 @@ public class GenerateGasSupplyReportsController implements Initializable {
             this.pressure = pressure;
         }
 
-        public String getDate() { return date; }
-        public String getZone() { return zone; }
-        public Double getSupplyRate() { return supplyRate; }
-        public Double getTotalSupply() { return totalSupply; }
-        public Double getPressure() { return pressure; }
+        public String getDate() {
+            return date;
+        }
+        public String getZone() {
+            return zone;
+        }
+        public Double getSupplyRate() {
+            return supplyRate;
+        }
+        public Double getTotalSupply() {
+            return totalSupply;
+        }
+        public Double getPressure() {
+            return pressure;
+        }
     }
 
     @Override
@@ -81,7 +91,6 @@ public class GenerateGasSupplyReportsController implements Initializable {
             reportList = FXCollections.observableArrayList();
             supplyReportTable.setItems(reportList);
 
-            // Initialize currentStage when the scene is available
             if (fetchDataButton != null && fetchDataButton.getScene() != null) {
                 currentStage = (Stage) fetchDataButton.getScene().getWindow();
             }
@@ -109,7 +118,7 @@ public class GenerateGasSupplyReportsController implements Initializable {
 
     private Stage getCurrentStage() {
         if (currentStage == null) {
-            // Try to get stage from any available button
+
             if (fetchDataButton != null && fetchDataButton.getScene() != null) {
                 currentStage = (Stage) fetchDataButton.getScene().getWindow();
             } else if (saveToBinButton != null && saveToBinButton.getScene() != null) {
@@ -173,7 +182,7 @@ public class GenerateGasSupplyReportsController implements Initializable {
             return;
         }
 
-        // Redirect to View Usage Statistics for comprehensive chart visualization
+
         showAlert(Alert.AlertType.INFORMATION, "View Charts",
                 "Please use the 'View Usage Statistics' section from the main dashboard for comprehensive chart visualization.");
     }
@@ -195,11 +204,11 @@ public class GenerateGasSupplyReportsController implements Initializable {
         String fromDate = fromDatePicker.getValue().toString();
         String toDate = toDatePicker.getValue().toString();
 
-        if (PDFGenerator.generateGasSupplyReport(stage, reportList, reportType, fromDate, toDate)) {
+     /*   if (PDFGenerator.generateGasSupplyReport(stage, reportList, reportType, fromDate, toDate)) {
             showAlert(Alert.AlertType.INFORMATION, "Report Generated", "Report has been generated successfully.");
         } else {
             showAlert(Alert.AlertType.ERROR, "Generation Failed", "Failed to generate report.");
-        }
+        }*/
     }
 
     private void updateSummaryLabels() {
@@ -234,6 +243,5 @@ public class GenerateGasSupplyReportsController implements Initializable {
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
-        alert.showAndWait();
     }
 }

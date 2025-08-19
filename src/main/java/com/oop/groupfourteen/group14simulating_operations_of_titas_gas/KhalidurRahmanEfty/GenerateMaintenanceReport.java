@@ -1,5 +1,9 @@
 package com.oop.groupfourteen.group14simulating_operations_of_titas_gas.KhalidurRahmanEfty;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+
 public class GenerateMaintenanceReport
 {
     @javafx.fxml.FXML

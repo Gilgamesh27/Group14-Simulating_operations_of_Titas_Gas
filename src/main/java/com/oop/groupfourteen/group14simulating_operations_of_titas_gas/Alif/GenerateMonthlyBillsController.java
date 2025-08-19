@@ -78,7 +78,7 @@ public class GenerateMonthlyBillsController implements Initializable {
         for (Bill bill : billsList) {
             if ("Reviewed".equals(bill.getStatus())) {
                 bill.setStatus("Generated");
-                PDFGenerator.generateMonthlyBillPdf(stage, bill);
+//                PDFGenerator.generateMonthlyBillPdf(stage, bill);
             }
         }
         billsTableView.refresh();

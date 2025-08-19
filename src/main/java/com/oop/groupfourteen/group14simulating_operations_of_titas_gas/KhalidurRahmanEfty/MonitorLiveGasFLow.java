@@ -1,5 +1,7 @@
 package com.oop.groupfourteen.group14simulating_operations_of_titas_gas.KhalidurRahmanEfty;
 
+import javafx.scene.control.*;
+
 public class MonitorLiveGasFLow
 {
     @javafx.fxml.FXML
