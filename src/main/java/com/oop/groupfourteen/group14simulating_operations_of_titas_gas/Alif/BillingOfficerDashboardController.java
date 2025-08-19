@@ -41,7 +41,7 @@ public class BillingOfficerDashboardController {
 
     private void openFxml(String fxmlFile, String title) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("com/oop/groupfourteen/group14simulating_operations_of_titas_gas/Alif/" + fxmlFile));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/oop/groupfourteen/group14simulating_operations_of_titas_gas/Alif/" + fxmlFile));
             Stage stage = (Stage) signoutButton.getScene().getWindow();
             stage.setScene(new Scene(root, 800, 600));
             stage.setTitle("Titas Gas - " + title);
